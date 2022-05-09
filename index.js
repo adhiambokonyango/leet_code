@@ -1,10 +1,25 @@
 const express = require("express")
-
 const app = express();
 
+/**
+ * twoSum
+ * @type {function(*, *): void}
+ */
 const twoSum = require("./twoSum");
 twoSum([2,7,1,11,15], 9);
 
+
+
+
+/**
+ *
+ * HASHTABLE PRACTISE
+ *
+ * @param key
+ * @param max
+ * @returns {number}
+ * @private
+ */
 let _hash = (key, max) => {
  let hash = 0;
  for(let i=0; i<key.length; i++){
