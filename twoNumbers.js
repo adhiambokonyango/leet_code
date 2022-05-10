@@ -1,4 +1,5 @@
 let LinkedLIst = require("./linkedLIst");
+let Node = require("./node")
 
 /**
  * LinkedLIst {
@@ -23,9 +24,43 @@ list2.insertAt(6, 0)
 list2.insertAt(5, 0)
 
 
-let addTwoNumbers = () =>{
-    console.log(list1.head.element)
-    console.log(list1.head.next)
+let addTwoNumbers = (list1, list2) =>{
+  //  console.log(list1.head.element)
+  //  console.log(list1.head.next)
+    let first = list1.head;
+    let second = list2.head;
+    let carry = null;
+    let sum = 0;
+    let dummyHead;
+    let current;
+    let listSum= new LinkedLIst();
+    while (first || second){
+
+        sum = first.element + second.element;
+        console.log( `${sum} = ${first.element} + ${second.element}`)
+        if (sum > 9){
+            carry = sum/10
+            dummyHead = new Node(carry);
+            current = sum%10
+            listSum.add(current)
+            if (first.next){
+                console.log("first.next")
+                console.log(first.next)
+                first.next.element = first.next.element+carry;
+                console.log("first.next")
+                console.log(first.next)
+            }
+        } else {
+            listSum.add(sum);
+        }
+        console.log(listSum.head)
+        first = first.next
+        second = second.next
+
+    }
+
+    return listSum;
+
 }
 
-addTwoNumbers()
+addTwoNumbers(list1, list2)
