@@ -36,26 +36,26 @@ let addTwoNumbers = (list1, list2) =>{
     let listSum= new LinkedLIst();
     while (first || second){
 
-        sum = first.element + second.element;
-        console.log( `${sum} = ${first.element} + ${second.element}`)
-        if (sum > 9){
-            carry = sum/10
-            dummyHead = new Node(carry);
-            current = sum%10
-            listSum.add(current)
-            if (first.next){
-                console.log("first.next")
-                console.log(first.next)
-                first.next.element = first.next.element+carry;
-                console.log("first.next")
-                console.log(first.next)
+            sum = first.element + second.element;
+            console.log( `${sum} = ${first.element} + ${second.element}`)
+            if (sum > 9){
+                carry = sum/10
+                dummyHead = new Node(carry);
+                current = sum%10
+                listSum.add(current)
+                if (first.next){
+                    console.log("first.next")
+                    console.log(first.next)
+                    first.next.element = first.next.element+carry;
+                    console.log("first.next")
+                    console.log(first.next)
+                }
+            } else {
+                listSum.add(sum);
             }
-        } else {
-            listSum.add(sum);
-        }
-        console.log(listSum.head)
-        first = first.next
-        second = second.next
+            console.log(listSum.head)
+            first = first.next
+            second = second.next
 
     }
 
