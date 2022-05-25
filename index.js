@@ -20,3 +20,6 @@ console.log(longestSubstring('aaa'.split(''), 2) );
 
 const longestString = require("./longestSubString")
 longestString('abcabcbb')
+
+const median = require("./median")
+median()
